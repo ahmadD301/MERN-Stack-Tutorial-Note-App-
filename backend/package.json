@@ -11,8 +11,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@upstash/ratelimit": "^2.0.6",
+    "@upstash/redis": "^1.35.3",
     "dotenv": "^17.2.2",
     "express": "^5.1.0",
+    "express-rate-limit": "^8.1.0",
     "mongoos": "^0.0.1-security",
     "mongoose": "^8.18.1"
   },
