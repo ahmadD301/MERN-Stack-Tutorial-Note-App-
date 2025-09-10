@@ -1,8 +1,8 @@
 // import express from 'express';
-const express = require('express');
-const notesRoutes = require('./routes/notesRouts');
-const { connectDB } = require('./config/db');
-const dotenv = require('dotenv');
+import express from 'express';
+import notesRoutes from './routes/notesRouts.js';
+import connectDB from './config/db.js';
+import dotenv from 'dotenv';
 
 const PORT = process.env.PORT || 3000;
 dotenv.config();
@@ -10,9 +10,12 @@ dotenv.config();
 console.log(process.env.MONGO_URI);
 
 connectDB();
+
 const app = express();
 // Middleware to parse JSON
+
 app.use(express.json());
+
 app.use("/api/notes", notesRoutes);
 
 

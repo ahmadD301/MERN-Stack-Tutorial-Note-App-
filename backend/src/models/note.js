@@ -2,7 +2,6 @@ import mongoose from "mongoose";
 
 // 1- create a schema
 
-// 2- create a model
 
 const noteSchema = new mongoose.Schema(
     {
@@ -18,8 +17,12 @@ const noteSchema = new mongoose.Schema(
     { timestamps: true }
 );
 
+// 2- create a model
 const Note = mongoose.model('Note', noteSchema);
-
+ 
 export default Note;
+
+// 3- export the model
+// module.exports = Note;
 
 
