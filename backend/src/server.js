@@ -5,6 +5,8 @@ import connectDB from './config/db.js';
 import dotenv from 'dotenv';
 import RateLimiter from './middleware/rateLimiter.js';
 import rateLimiter from './middleware/rateLimiter.js';
+import cors from 'cors';
+
 
 const PORT = process.env.PORT || 3000;
 dotenv.config();
@@ -17,7 +19,13 @@ const app = express();
 // Middleware to parse JSON
 
 app.use(express.json());// this middleware will parse incoming JSON requests and put the parsed data in req.body
+app.use(cors({
+  origin: 'http://localhost:5173' // allow your frontend
+}));// to allow cross-origin requests from any domain
+
+
 app.use(rateLimiter);
+
 
 // app.use((req, res, next)=> {// custom middleware will run for every request before reaching the route handlers
 //     console.log(`requested URL: ${req.url} - Method: ${req.method}`);
