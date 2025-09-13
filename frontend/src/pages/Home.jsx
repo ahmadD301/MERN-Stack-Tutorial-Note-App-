@@ -40,11 +40,13 @@ const Home = () => {
 
     <div className='max-w-7xl mx-auto p-4 mt-6'>
       {loading && <div className='text-center text-primary py-10'>Loading...</div>}
-
+      {(!loading && note.length === 0 && !isRateLimited) && (
+        <div className='text-center text-gray-500 py-10'>No Notes Found. Create a new note to get started!</div>
+      )}
       {note.length > 0 && !isRateLimited && (
         <div className='grid grid-cols-1 md:grid-cols-3 gap-4'>
         {note.map(note => (
-          <NoteCard key={note._id} note={note}/>
+          <NoteCard key={note._id} note={note} setNote={setNote}/>
           // <div>
           //   {note.title} | {note.content}
           // </div>
