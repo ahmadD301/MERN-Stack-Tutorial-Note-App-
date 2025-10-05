@@ -44,13 +44,13 @@ const Create = () => {
     }
                                      
   };
-  return <div className="min-h-screen bg-base-200">
+  return <div className="min-h-screen bg-red-200">
     <div className="container mx-auto pt-4">
       <div className = "max-w-md mx-auto background-white p-6 rounded-md shadow-md" >
-        <Link  to = "/" className="btn btn-ghost mb-6" >
-        <ArrowLeftIcon className="h-4 w-4 mr-2" />
-        Back To Note
-        </Link>
+        <Link  to = "/" className="btn btn-secondary mb-6" >
+          <ArrowLeftIcon className="h-4 w-4 mr-2" />
+            Back To Note
+          </Link>
         <div className="card bg-base-100 p-4 rounded-md shadow-md" >
           <form onSubmit={handleSubmit}>
           <div className="card-body">
